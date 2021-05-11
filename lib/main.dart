@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/FirstNewRoute.dart';
+import 'package:flutter_app/NewRouteWithParams.dart';
 
 void main() {
   runApp(MyApp());
@@ -48,6 +49,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String _returnValue = "";
+
 
   void _incrementCounter() {
     setState(() {
@@ -57,6 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+    });
+  }
+
+  void _updateReturnValue() {
+    print("return value is $_returnValue");
+    setState(() {
+      _returnValue = "" + _returnValue;
     });
   }
 
@@ -107,8 +117,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   return FirstNewRoute();
                 }));
               },
-              child: Text("open new route"),
+              child: Text("跳转普通页面"),
               textColor: Colors.blue,
+            ),
+            RaisedButton(
+              onPressed: () async {
+                _returnValue = await Navigator.push(context,
+                    MaterialPageRoute(builder: (context) {
+                  return NewRouteWithParams(text: "当前计数：$_counter");
+                }));
+                _updateReturnValue();
+              },
+              child: Text("跳转带参数页面"),
+            ),
+            Text(
+              '返回的参数 $_returnValue',
+              style: Theme.of(context).textTheme.headline5,
             )
           ],
         ),

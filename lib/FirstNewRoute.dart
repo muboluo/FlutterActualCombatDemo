@@ -7,7 +7,6 @@ class FirstNewRoute extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("First new route"),),
       body: Center(child: Text("This is my first new route"),),
-
     );
   }
 }
