@@ -1,4 +1,5 @@
 
+import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 class NewRouteWithParams extends StatelessWidget {
@@ -8,9 +9,11 @@ class NewRouteWithParams extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final wordPail = WordPair.random().toString();
     return Scaffold(
       appBar: AppBar(
-        title: Text("带传参的页面"),
+        // title: Text("带传参的页面"),
       ),
       body: Center(
         child: Column(
@@ -21,6 +24,10 @@ class NewRouteWithParams extends StatelessWidget {
                   Navigator.of(context).pop("洞洞收到"),
               child: Text("带参数返回"),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("english_word包随机方法测试 $wordPail"),
+            )
           ],
         ),
       ),

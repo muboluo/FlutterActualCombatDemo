@@ -29,6 +29,13 @@ class MyApp extends StatelessWidget {
       routes: {
         "newRouteWithName": (context) => NewRouteWithName(),
       },
+      //todo 添加钩子代码和逻辑
+      // onGenerateRoute: (RouteSettings settings) {
+      //   return MaterialPageRoute(builder: (context) {
+      //     print("settings.name $settings.name");
+      //
+      //   });
+      // },
     );
   }
 }
