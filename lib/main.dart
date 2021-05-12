@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/FirstNewRoute.dart';
+import 'package:flutter_app/NewRouteWithName.dart';
 import 'package:flutter_app/NewRouteWithParams.dart';
 
 void main() {
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        "newRouteWithName": (context) => NewRouteWithName(),
+      },
     );
   }
 }
@@ -50,7 +54,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String _returnValue = "";
-
 
   void _incrementCounter() {
     setState(() {
@@ -133,7 +136,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '返回的参数 $_returnValue',
               style: Theme.of(context).textTheme.headline5,
-            )
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .pushNamed("newRouteWithName", arguments: "我是洞拐，我是洞拐");
+              },
+              child: Text("跳转命名路由"),
+            ),
           ],
         ),
       ),
