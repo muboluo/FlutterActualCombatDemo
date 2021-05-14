@@ -26,6 +26,19 @@ class NewRouteWithParams extends StatelessWidget {
               child: Text("english_word包随机方法测试 $wordPail"),
             ),
             Image.asset('images/ic_launcher.png'),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: TextButton(
+                child: Text('空方法测试'),
+                onPressed: () {
+                  var temp = "";
+                  temp = null;
+                  if (temp.isEmpty) {
+                    print('error ');
+                  }
+                },
+              ),
+            ),
           ],
         ),
       ),

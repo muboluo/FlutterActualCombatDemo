@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_app/FirstNewRoute.dart';
 import 'package:flutter_app/NewRouteWithName.dart';
 import 'package:flutter_app/NewRouteWithParams.dart';
@@ -151,6 +152,12 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text("跳转命名路由"),
             ),
+            TextButton(onPressed: (){
+              debugDumpApp();
+            }, child: Text('打印Widget树')),
+            TextButton(onPressed: (){
+              debugDumpRenderTree();
+            }, child: Text('打印RenderTree'),)
           ],
         ),
       ),
