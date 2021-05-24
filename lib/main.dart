@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_app/FirstNewRoute.dart';
 import 'package:flutter_app/NewRouteWithName.dart';
 import 'package:flutter_app/NewRouteWithParams.dart';
+import 'package:flutter_app/Route4ContextTest.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +11,10 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
+  static const String ROUTE_4_CONTEXT_TEST = "route4ContextTest";
+  static const String NEW_ROUTE_WITH_NAME = "newRouteWithName";
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +33,8 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
-        "newRouteWithName": (context) => NewRouteWithName(),
+        NEW_ROUTE_WITH_NAME: (context) => NewRouteWithName(),
+        ROUTE_4_CONTEXT_TEST: (context) => Route4ContextText(),
       },
       //todo 添加钩子代码和逻辑
       // onGenerateRoute: (RouteSettings settings) {
@@ -152,12 +158,24 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text("跳转命名路由"),
             ),
-            TextButton(onPressed: (){
-              debugDumpApp();
-            }, child: Text('打印Widget树')),
-            TextButton(onPressed: (){
-              debugDumpRenderTree();
-            }, child: Text('打印RenderTree'),)
+            TextButton(
+                onPressed: () {
+                  debugDumpApp();
+                },
+                child: Text('打印Widget树')),
+            TextButton(
+              onPressed: () {
+                debugDumpRenderTree();
+              },
+              child: Text('打印RenderTree'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .pushNamed(MyApp.ROUTE_4_CONTEXT_TEST, arguments: "我是洞拐");
+              },
+              child: Text("跳转context 测试"),
+            )
           ],
         ),
       ),
