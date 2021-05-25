@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 /*
 *  测试所有的状态都由父类来管理的 widget。
 */
-class TapboxBParent extends StatefulWidget {
+class TapboxBParentWidget extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _TapboxBParentState();
+  State<StatefulWidget> createState() => _TapboxBParentWidgetState();
 }
 
-class _TapboxBParentState extends State<TapboxBParent> {
+class _TapboxBParentWidgetState extends State<TapboxBParentWidget> {
   bool _active = false;
 
   void _handleTapboxChanged(bool newValue) {

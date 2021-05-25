@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 // 管理自身状态的测试用例
-class TapboxA extends StatefulWidget {
-  TapboxA({Key key}) : super(key: key);
+class TapboxAWidget extends StatefulWidget {
+  TapboxAWidget({Key key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => new _TapboxAState();
+  State<StatefulWidget> createState() => new _TapboxAWidgetState();
 }
 
-class _TapboxAState extends State<TapboxA> {
+class _TapboxAWidgetState extends State<TapboxAWidget> {
   bool _active = false;
 
   void _handleTap() {

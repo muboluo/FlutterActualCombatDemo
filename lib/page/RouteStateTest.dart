@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/widget/TapboxA.dart';
 import 'package:flutter_app/widget/TapboxB.dart';
+import 'package:flutter_app/widget/TapboxC.dart';
 
 class RouteStateTest extends StatelessWidget {
   static const TAG = "RouteStateTest";
@@ -13,8 +14,9 @@ class RouteStateTest extends StatelessWidget {
       ),
       body: Column(
         children: [
-          TapboxA(),
-          TapboxBParent(),
+          TapboxAWidget(),
+          TapboxBParentWidget(),
+          TapboxCParentWidget(),
         ],
       ),
     );
