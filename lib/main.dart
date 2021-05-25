@@ -12,9 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
 
-  static const String ROUTE_4_CONTEXT_TEST = "route4ContextTest";
-  static const String NEW_ROUTE_WITH_NAME = "newRouteWithName";
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,8 +30,8 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
-        NEW_ROUTE_WITH_NAME: (context) => NewRouteWithName(),
-        ROUTE_4_CONTEXT_TEST: (context) => Route4ContextText(),
+        NewRouteWithName.TAG: (context) => NewRouteWithName(),
+        Route4ContextTest.TAG: (context) => Route4ContextTest(),
       },
       //todo 添加钩子代码和逻辑
       // onGenerateRoute: (RouteSettings settings) {
@@ -154,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context)
-                    .pushNamed("newRouteWithName", arguments: "我是洞拐，我是洞拐");
+                    .pushNamed(NewRouteWithName.TAG, arguments: "我是洞拐，我是洞拐");
               },
               child: Text("跳转命名路由"),
             ),
@@ -172,10 +169,16 @@ class _MyHomePageState extends State<MyHomePage> {
             TextButton(
               onPressed: () {
                 Navigator.of(context)
-                    .pushNamed(MyApp.ROUTE_4_CONTEXT_TEST, arguments: "我是洞拐");
+                    .pushNamed(Route4ContextTest.TAG, arguments: "我是洞拐");
               },
               child: Text("跳转context 测试"),
-            )
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("", arguments: "我是洞拐");
+              },
+              child: Text("3.2 状态管理"),
+            ),
           ],
         ),
       ),

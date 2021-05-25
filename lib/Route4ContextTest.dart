@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
  * context测试类， 用于测试 flutter context 文章中的代码
  * https://book.flutterchina.club/chapter3/flutter_widget_intro.html#_3-1-4-statelesswidget
  */
-class Route4ContextText extends StatelessWidget {
+class Route4ContextTest extends StatelessWidget {
+  static const String TAG = "Route4ContextText";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

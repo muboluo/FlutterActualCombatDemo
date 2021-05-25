@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NewRouteWithName extends StatelessWidget {
+  static const TAG = "NewRouteWithName";
+
   @override
   Widget build(BuildContext context) {
     var arguments = ModalRoute.of(context).settings.arguments;
@@ -11,9 +13,7 @@ class NewRouteWithName extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          children: <Widget>[
-            Text("上个页面传递过来的值 $arguments")
-          ],
+          children: <Widget>[Text("上个页面传递过来的值 $arguments")],
         ),
       ),
     );
