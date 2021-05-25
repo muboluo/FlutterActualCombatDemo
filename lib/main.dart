@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_app/FirstNewRoute.dart';
-import 'package:flutter_app/NewRouteWithName.dart';
-import 'package:flutter_app/NewRouteWithParams.dart';
-import 'package:flutter_app/Route4ContextTest.dart';
+import 'package:flutter_app/page/FirstNewRoute.dart';
+import 'package:flutter_app/page/NewRouteWithName.dart';
+import 'package:flutter_app/page/NewRouteWithParams.dart';
+import 'package:flutter_app/page/Route4ContextTest.dart';
+import 'package:flutter_app/page/RouteStateTest.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
       routes: {
         NewRouteWithName.TAG: (context) => NewRouteWithName(),
         Route4ContextTest.TAG: (context) => Route4ContextTest(),
+        RouteStateTest.TAG: (context) => RouteStateTest(),
       },
       //todo 添加钩子代码和逻辑
       // onGenerateRoute: (RouteSettings settings) {
@@ -175,7 +177,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushNamed("", arguments: "我是洞拐");
+                Navigator.of(context)
+                    .pushNamed(RouteStateTest.TAG, arguments: "我是洞拐");
               },
               child: Text("3.2 状态管理"),
             ),
