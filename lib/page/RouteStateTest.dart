@@ -3,8 +3,8 @@ import 'package:flutter_app/widget/TapboxA.dart';
 import 'package:flutter_app/widget/TapboxB.dart';
 import 'package:flutter_app/widget/TapboxC.dart';
 
-class RouteStateTest extends StatelessWidget {
-  static const TAG = "RouteStateTest";
+class Route4StateTest extends StatelessWidget {
+  static const TAG = "Route4StateTest";
 
   @override
   Widget build(BuildContext context) {
