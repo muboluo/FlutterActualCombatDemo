@@ -4,6 +4,7 @@ import 'package:flutter_app/page/FirstNewRoute.dart';
 import 'package:flutter_app/page/NewRouteWithName.dart';
 import 'package:flutter_app/page/NewRouteWithParams.dart';
 import 'package:flutter_app/page/Route4ContextTest.dart';
+import 'package:flutter_app/page/Route4InputAndFormTest.dart';
 import 'package:flutter_app/page/Route4TextButtonCheckboxTest.dart';
 import 'package:flutter_app/page/RouteStateTest.dart';
 
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         Route4StateTest.TAG: (context) => Route4StateTest(),
         Route4TextButtonCheckboxTest.TAG: (context) =>
             Route4TextButtonCheckboxTest(),
+        Route4InputAndFormTest.TAG: (context) => Route4InputAndFormTest(),
       },
       //todo 添加钩子代码和逻辑
       // onGenerateRoute: (RouteSettings settings) {
@@ -192,6 +194,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       arguments: "我是洞拐");
                 },
                 child: Text("3.3 文本样式")),
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushNamed(Route4InputAndFormTest.TAG, arguments: "我是洞拐");
+                },
+                child: Text("3.7表单输入"))
           ],
         ),
       ),
