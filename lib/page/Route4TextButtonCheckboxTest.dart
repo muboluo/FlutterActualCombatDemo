@@ -35,6 +35,64 @@ class Route4TextButtonCheckboxTest extends StatelessWidget {
               decorationStyle: TextDecorationStyle.dashed,
             ),
           ),
+          DefaultTextStyle(
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 20.0,
+              ),
+              textAlign: TextAlign.start,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("hello"),
+                  Text("hello2"),
+                  Text(
+                    "hello3",
+                    style: TextStyle(inherit: false, color: Colors.yellow),
+                  ),
+                ],
+              )),
+          Image(
+            image: NetworkImage(
+                "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4"),
+            width: 100.0,
+            height: 50,
+            fit: BoxFit.fill,
+          ),
+          Image(
+            image: NetworkImage(
+                "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4"),
+            width: 100.0,
+            height: 50.0,
+            fit: BoxFit.contain,
+          ),
+          Image(
+            image: NetworkImage(
+                "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4"),
+            width: 100.0,
+            height: 50.0,
+            fit: BoxFit.cover,
+          ),
+          Image(
+            image: NetworkImage(
+                "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4"),
+            width: 100,
+            height: 50,
+            fit: BoxFit.fitWidth,
+          ),
+          Image(
+            image: AssetImage("images/ic_launcher.png"),
+            width: 100,
+            height: 50,
+            fit: BoxFit.fitHeight,
+          ),
+          Image(
+            image: NetworkImage(
+                "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4"),
+            width: 100,
+            height: 50,
+            fit: BoxFit.none,
+          ),
         ],
       ),
     );
