@@ -33,42 +33,51 @@ class _Route4InputAndFormState extends State<Route4InputAndFormTest> {
       appBar: AppBar(
         title: Text('TextField 测试'),
       ),
-      body: Column(
-        children: <Widget>[
-          TextField(
-            focusNode: node1,
-            controller: _nameController,
-            autofocus: true,
-            decoration: InputDecoration(
-                labelText: "用户名",
-                hintText: "用户名或邮箱",
-                prefixIcon: Icon(Icons.person)),
-          ),
-          TextField(
-            focusNode: node2,
-            decoration: InputDecoration(
+      body: Theme(
+        data: Theme.of(context).copyWith(
+            hintColor: Colors.grey[200],
+            inputDecorationTheme: InputDecorationTheme(
+                labelStyle: TextStyle(color: Colors.red),
+                hintStyle: TextStyle(color: Colors.grey, fontSize: 14.0))),
+        child: Column(
+          children: <Widget>[
+            TextField(
+              focusNode: node1,
+              controller: _nameController,
+              autofocus: true,
+              decoration: InputDecoration(
+                  labelText: "用户名",
+                  hintText: "用户名或邮箱",
+                  prefixIcon: Icon(Icons.person)),
+            ),
+            TextField(
+              focusNode: node2,
+              decoration: InputDecoration(
                 labelText: "密码",
                 hintText: "您的登录密码",
-                prefixIcon: Icon(Icons.lock)),
-            obscureText: true,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              if (null == scopeNode) {
-                scopeNode = FocusScope.of(context);
-              }
-              scopeNode.requestFocus(node2);
-            },
-            child: Text('切换焦点'),
-          ),
-          ElevatedButton(
+                prefixIcon: Icon(Icons.lock),
+                hintStyle: TextStyle(color: Colors.grey, fontSize: 13.0),
+              ),
+              obscureText: true,
+            ),
+            ElevatedButton(
               onPressed: () {
-                node1.unfocus();
-                node2.unfocus();
+                if (null == scopeNode) {
+                  scopeNode = FocusScope.of(context);
+                }
+                scopeNode.requestFocus(node2);
               },
-              // 所有输入框都失去焦点之后，键盘会自动隐藏。
-              child: Text('所有输入框都失去焦点，隐藏键盘')),
-        ],
+              child: Text('切换焦点'),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  node1.unfocus();
+                  node2.unfocus();
+                },
+                // 所有输入框都失去焦点之后，键盘会自动隐藏。
+                child: Text('所有输入框都失去焦点，隐藏键盘')),
+          ],
+        ),
       ),
     );
   }
